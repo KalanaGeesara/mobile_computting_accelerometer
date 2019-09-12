@@ -8,7 +8,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.widget.TextView;
 
-public class GyroActivity extends Activity implements SensorEventListener {
+public class AcceleroActivity extends Activity implements SensorEventListener {
 
     private TextView axisX;
     private TextView axisY;
@@ -17,14 +17,13 @@ public class GyroActivity extends Activity implements SensorEventListener {
     private Sensor sensor;
     private boolean flag;
 
-    public GyroActivity(Context context, TextView axisX, TextView axisY, TextView axisZ) {
+    public AcceleroActivity (Context context, TextView axisX, TextView axisY, TextView axisZ) {
         this.axisX = axisX;
         this.axisY = axisY;
         this.axisZ = axisZ;
 
-        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-
+        this.sensorManager = (SensorManager) context.getSystemService(SENSOR_SERVICE); //get the sensor
+        this.sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     }
 
     public void onResume() {
@@ -36,7 +35,6 @@ public class GyroActivity extends Activity implements SensorEventListener {
     public void onPause() {
 
         super.onPause();
-
     }
 
     public void register() {
@@ -54,11 +52,10 @@ public class GyroActivity extends Activity implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
 
-//        String sensorName = event.sensor.getName();
         String x = String.valueOf(event.values[0]);
         String y = String.valueOf(event.values[1]);
         String z = String.valueOf(event.values[2]);
-        if (flag) {
+        if (flag != false) {
             axisX.setText(x);
             axisY.setText(y);
             axisZ.setText(z);

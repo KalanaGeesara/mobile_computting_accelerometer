@@ -9,14 +9,11 @@
     android:fadingEdge="horizontal|vertical"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
         android:id="@+id/startBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#BB53DA"
-        android:clickable="true"
-        android:cursorVisible="true"
-        android:fadingEdge="horizontal|vertical"
         android:onClick="startActivity"
         android:text="Start"
         android:textSize="36sp"
@@ -26,8 +23,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.617"
-        tools:text="Start" />
+        app:layout_constraintVertical_bias="0.617" />
 
     <TextView
         android:id="@+id/xAxisTextView"
@@ -70,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Gyro Reader"
+        android:text="Accelerometer Reader"
         android:textColor="#271B1B"
         android:textColorHint="#00222122"
         android:textSize="36sp"
@@ -78,5 +74,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="X Value : "
+        app:layout_constraintEnd_toStartOf="@+id/xAxisTextView"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Y Value : "
+        app:layout_constraintEnd_toStartOf="@+id/yAxisTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Z Value : "
+        app:layout_constraintEnd_toStartOf="@+id/zAxisTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
