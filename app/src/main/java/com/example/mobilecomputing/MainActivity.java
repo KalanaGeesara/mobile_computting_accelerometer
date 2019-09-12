@@ -2,6 +2,7 @@ package com.example.mobilecomputing;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
         if (accleroActivity == null) accleroActivity = new AcceleroActivity(this, axisX, axisY, axisZ);
         if (startBtn.getText().equals("Start")) {
             startBtn.setText("Stop");
-            startBtn.setBackgroundColor(256);
+            startBtn.setBackgroundColor(Color.RED);
             accleroActivity.register();
         } else {
             startBtn.setText("Start");
-            startBtn.setBackgroundColor(111);
+            startBtn.setBackgroundColor(Color.GREEN);
             accleroActivity.unRegister();
 
         }
